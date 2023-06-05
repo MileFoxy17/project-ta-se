@@ -3,22 +3,22 @@
 @section('content')
         <div class="card">
             <div class="card-header">
-                <h3>Edit tag
+                <h3>Edit Sub Kategori
                     <a href="{{ route('admin.tags.index') }}" class="btn btn-primary float-right">
-                        Go Back
+                        Kembali
                     </a>
-                </h3>     
+                </h3>
             </div>
             <div class="card-body">
                 <form action="{{ route('admin.tags.update', $tag->id) }}" method="post">
-                    @csrf 
+                    @csrf
                     @method('put')
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Nama Sub Kategori</label>
                         <input type="text" name="name" class="form-control" value="{{ old('name', $tag->name) }}">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>

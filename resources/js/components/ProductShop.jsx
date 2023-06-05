@@ -34,7 +34,7 @@ const ProductShop = () => {
 
         axios.post("/carts", { productId }).then((res) => {
             if (res.status === 200) {
-                swal("Success", "Added to Cart !", "success");
+                swal("Berhasil!", "Menambahkan ke Keranjang !", "success");
                 window.location.reload();
             }
         });
@@ -154,7 +154,7 @@ const ProductShop = () => {
                                                 {product.name}
                                             </a>
                                         </h6>
-                                        <h5>${product.price}</h5>
+                                        <h5>Rp. {product.price}</h5>
                                     </div>
                                 </div>
                             </div>

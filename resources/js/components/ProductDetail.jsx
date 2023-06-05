@@ -37,7 +37,7 @@ const ProductDetail = () => {
 
         axios.post("/carts", { productId, quantity }).then((res) => {
             if (res.status === 200) {
-                swal("Success", "Added to Cart !", "success");
+                swal("Berhasil!", "Menambahkan ke Keranjang !", "success");
                 window.location.reload();
             }
         });
@@ -96,7 +96,7 @@ const ProductDetail = () => {
                                     <span>(18 reviews)</span>
                                 </div>
                                 <div className="product__details__price">
-                                    ${product.price}
+                                    Rp. {product.price}
                                 </div>
                                 <p>{product.description}</p>
                                 <form
@@ -138,7 +138,7 @@ const ProductDetail = () => {
                                         className="primary-btn"
                                         style={{ border: "none" }}
                                     >
-                                        ADD TO CARD
+                                        asdas
                                     </button>
                                 </form>
                                 <a href="#" className="heart-icon">

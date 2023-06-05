@@ -3,11 +3,11 @@
 @section('content')
         <div class="card">
             <div class="card-header">
-                <h3>product List
+                <h3>List Produk
                     <a href="{{ route('admin.products.create') }}" class="btn btn-primary float-right">
-                        Create
+                        Tambahkan Data Baru
                     </a>
-                </h3>     
+                </h3>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -15,12 +15,12 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Name</th>
-                                <th>Category</th>
-                                <th>Tag</th>
-                                <th>Price</th>
+                                <th>Nama Produk</th>
+                                <th>Kategori</th>
+                                <th>Sub Kategori</th>
+                                <th>Harga</th>
                                 <th>Quantity</th>
-                                <th>Image</th>
+                                <th>Foto Produk</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -37,12 +37,12 @@
                                             <span class="badge badge-primary"> {{ $tag->name  }}</span>
                                         @endforeach
                                     </td>
-                                    <td>${{ number_format($product->price, 2) }}</td>
+                                    <td>Rp. {{ number_format($product->price, 2) }}</td>
                                     <td>{{ $product->quantity }}</td>
                                     <td>
                                         @if(count($product->gallery)  > 0)
                                             <a href="{{ $product->getMedia('gallery')->first()->getUrl() }}" target="_blank">
-                                                <img src="{{ $product->getMedia('gallery')->first()->getUrl() }}" width="45px" height="45px" alt="">  
+                                                <img src="{{ $product->getMedia('gallery')->first()->getUrl() }}" width="45px" height="45px" alt="">
                                             </a>
                                         @else
                                             <span class="badge badge-warning">no image</span>
@@ -57,7 +57,7 @@
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                             <form onclick="return confirm('are you sure ?');" action="{{ route('admin.products.destroy', $product->id) }}" method="post">
-                                                @csrf 
+                                                @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>

@@ -6,7 +6,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Ogani | Template</title>
+    <title>Recycle | Penjualan</title>
 
     <!-- Google Font -->
     <link
@@ -46,7 +46,7 @@
             <a href="#"><i class="fa fa-shopping-bag"></i> <span>{{ $cartCount }}</span></a>
           </li>
         </ul>
-        <div class="header__cart__price">item: <span>${{ $cartTotal }}</span></div>
+        <div class="header__cart__price">item: <span>Rp. {{ $cartTotal }}</span></div>
       </div>
       <div class="humberger__menu__widget">
           @guest
@@ -58,7 +58,7 @@
             <div class="header__top__right__auth" style="margin-left: 20px">
               <a href="{{ route('register') }}"><i class="fa fa-user"></i> Register</a>
             </div>
-          @else 
+          @else
           <div class="header__top__right__language">
             <div class="header__top__right__auth">
               <a href=""><i class="fa fa-user"></i> {{ auth()->user()->username }}</a>
@@ -71,7 +71,7 @@
           <div class="header__top__right__auth" style="margin-left: 20px">
             <a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-user"></i> Logout</a>
             <form action="{{ route('logout') }}" id="logout-form" method="post">
-              @csrf 
+              @csrf
 
             </form>
           </div>
@@ -116,8 +116,8 @@
             <div class="col-lg-6 col-md-6">
               <div class="header__top__left">
                 <ul>
-                  <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                  <li>Free Shipping for all Order of $99</li>
+                  <li><i class="fa fa-envelope"></i> recycle@gmail.com</li>
+                  <li>Gratis Pengiriman untuk semua Pesanan</li>
                 </ul>
               </div>
             </div>
@@ -135,7 +135,7 @@
                       <a href="{{ route('register') }}"><i class="fa fa-user"></i> Register</a>
                     </div>
                 </div>
-                @else 
+                @else
                 <div class="header__top__right">
                 <div
                   class="header__top__right__language header__top__right__auth"
@@ -151,7 +151,7 @@
                 <div class="header__top__right__auth">
                   <a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit()"><i class="fa fa-user"></i> Logout</a>
                   <form action="{{ route('logout') }}" id="logout-form" method="post">
-                    @csrf                   
+                    @csrf
                   </form>
                 </div>
               </div>
@@ -173,7 +173,7 @@
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="{{ route('shop.index') }}">Shop</a></li>
                 <li>
-                  <a href="#">Categories</a>
+                  <a href="#">Kategori</a>
                   <ul class="header__menu__dropdown">
                     @foreach($menu_categories as $menu_category)
                       <li><a href="{{ route('shop.index', $menu_category->slug) }}">{{ $menu_category->name }}</a></li>
@@ -196,7 +196,7 @@
                   >
                 </li>
               </ul>
-              <div class="header__cart__price">item: <span>${{ $cartTotal }}</span></div>
+              <div class="header__cart__price">Item: <span>Rp. {{ $cartTotal }}</span></div>
             </div>
           </div>
         </div>
@@ -208,31 +208,6 @@
     <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
-    <section class="hero">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="hero__search">
-              <div class="hero__search__form">
-                <form action="#">
-                  <input type="text" placeholder="What do yo u need?" />
-                  <button type="submit" class="site-btn">SEARCH</button>
-                </form>
-              </div>
-              <div class="hero__search__phone">
-                <div class="hero__search__phone__icon">
-                  <i class="fa fa-phone"></i>
-                </div>
-                <div class="hero__search__phone__text">
-                  <h5>+65 11.188.888</h5>
-                  <span>support 24/7 time</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- Hero Section End -->
 
     @yield('content')
@@ -247,42 +222,21 @@
                 <a href="./index.html"><img src="{{ asset('frontend/img/logo.png') }}" alt="" /></a>
               </div>
               <ul>
-                <li>Address: 60-49 Road 11378 New York</li>
-                <li>Phone: +65 11.188.888</li>
-                <li>Email: hello@colorlib.com</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-            <div class="footer__widget">
-              <h6>Useful Links</h6>
-              <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">About Our Shop</a></li>
-                <li><a href="#">Secure Shopping</a></li>
-                <li><a href="#">Delivery infomation</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Our Sitemap</a></li>
-              </ul>
-              <ul>
-                <li><a href="#">Who We Are</a></li>
-                <li><a href="#">Our Services</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Innovation</a></li>
-                <li><a href="#">Testimonials</a></li>
+                <li>Alamat: Universitas Pakuan</li>
+                <li>Phone: +6295 - 1738 - 6534</li>
+                <li>Email: recycle@gmail.com</li>
               </ul>
             </div>
           </div>
           <div class="col-lg-4 col-md-12">
             <div class="footer__widget">
-              <h6>Join Our Newsletter Now</h6>
+              <h6>Bergabung untuk mendapat berita terbaru</h6>
               <p>
-                Get E-mail updates about our latest shop and special offers.
+                Dapatkan update E-mail tentang toko terbaru kami dan penawaran khusus
               </p>
               <form action="#">
-                <input type="text" placeholder="Enter your mail" />
-                <button type="submit" class="site-btn">Subscribe</button>
+                <input type="text" placeholder="Masukkan Email anda" />
+                <button type="submit" class="site-btn">BERGABUNG</button>
               </form>
               <div class="footer__widget__social">
                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -297,17 +251,6 @@
           <div class="col-lg-12">
             <div class="footer__copyright">
               <div class="footer__copyright__text">
-                <p>
-                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                  Copyright &copy;
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  All rights reserved | This template is made with
-                  <i class="fa fa-heart" aria-hidden="true"></i> by
-                  <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
               </div>
               <div class="footer__copyright__payment">
                 <img src="img/payment-item.png" alt="" />

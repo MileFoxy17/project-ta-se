@@ -3,57 +3,57 @@
 @section('content')
         <div class="card">
             <div class="card-header">
-                <h3>Create product
+                <h3>Buat Data Produk
                     <a href="{{ route('admin.products.index') }}" class="btn btn-primary float-right">
-                        Go Back
+                        Kembali
                     </a>
-                </h3>     
+                </h3>
             </div>
             <div class="card-body">
                 <form action="{{ route('admin.products.store') }}" method="post">
-                    @csrf 
+                    @csrf
                     <div class="form-group">
-                        <label for="category_id">Category</label>
+                        <label for="category_id">Kategori</label>
                         <select class="form-control" name="category_id" id="">
                             @foreach($categories as $id => $categoryName)
                                 <option value="{{ $id }}">{{ $categoryName }}</option>
                             @endforeach
-                        </select>   
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="tags">Tag</label>
+                        <label for="tags">Sub Kategori</label>
                         <select class="form-control" name="tags[]" multiple id="tags">
                             @foreach($tags as $id => $tagName)
                                 <option value="{{ $id }}">{{ $tagName }}</option>
                             @endforeach
-                        </select>   
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Nama Produk</label>
                         <input type="text" name="name" value="{{ old('name') }}" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="price">price</label>
+                        <label for="price">Harga</label>
                         <input type="number" name="price" value="{{ old('price') }}" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="quantity">quantity</label>
+                        <label for="quantity">Quantity</label>
                         <input type="number" name="quantity" value="{{ old('quantity') }}" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="weight">weight</label>
+                        <label for="weight">Berat Produk</label>
                         <input type="number" name="weight" value="{{ old('weight') }}" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="description">description</label>
+                        <label for="description">Deskripsi Produk</label>
                         <textarea class="form-control" name="description" id="description" cols="30" rows="5"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="details">details</label>
+                        <label for="details">Detail Produk</label>
                         <textarea class="form-control" name="details" id="details" cols="30" rows="5"></textarea>
                     </div>
                     <div class="form-group {{ $errors->has('gallery') ? 'has-error' : '' }}">
-                        <label for="gallery">gallery</label>
+                        <label for="gallery">Foto Produk</label>
                         <div class="needsclick dropzone" id="gallery-dropzone">
 
                         </div>
@@ -64,7 +64,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>
@@ -75,7 +75,7 @@
 <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 @endpush
 
-@push('script-alt')   
+@push('script-alt')
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <script>
    var uploadedGalleryMap = {}

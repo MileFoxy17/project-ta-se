@@ -3,22 +3,22 @@
 @section('content')
         <div class="card">
             <div class="card-header">
-                <h3>Edit Category
+                <h3>Edit Kategori
                     <a href="{{ route('admin.categories.index') }}" class="btn btn-primary float-right">
-                        Go Back
+                        Kembali
                     </a>
-                </h3>     
+                </h3>
             </div>
             <div class="card-body">
                 <form action="{{ route('admin.categories.update', $category->id) }}" method="post">
-                    @csrf 
+                    @csrf
                     @method('put')
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Nama Kategori</label>
                         <input type="text" name="name" class="form-control" value="{{ old('name', $category->name) }}">
                     </div>
                     <div class="form-group {{ $errors->has('photo') ? 'has-error' : '' }}">
-                        <label for="photo">Photo</label>
+                        <label for="photo">Foto</label>
                         <div class="needsclick dropzone" id="photo-dropzone">
 
                         </div>
@@ -38,7 +38,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>
@@ -48,7 +48,7 @@
 <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 @endpush
 
-@push('script-alt')   
+@push('script-alt')
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <script>
     Dropzone.options.photoDropzone = {

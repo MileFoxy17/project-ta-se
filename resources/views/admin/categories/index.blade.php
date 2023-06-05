@@ -3,11 +3,11 @@
 @section('content')
         <div class="card">
             <div class="card-header">
-                <h3>Category List
+                <h3>List Kategori
                     <a href="{{ route('admin.categories.create') }}" class="btn btn-primary float-right">
-                        Create
+                        Tambahkan Data Baru
                     </a>
-                </h3>     
+                </h3>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -15,10 +15,9 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Name</th>
-                                <th>Slug</th>
-                                <th>Product Count</th>
-                                <th>Image</th>
+                                <th>Nama Kategori</th>
+                                <th>Id Kategori</th>
+                                <th>Foto</th>
                                 <th>Parent</th>
                                 <th>Action</th>
                             </tr>
@@ -29,7 +28,6 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $category->name }}</td>
                                     <td>{{ $category->slug }}</td>
-                                    <td>{{ $category->products_count }}</td>
                                     <td>
                                         @if($category->photo)
                                             <a href="{{ $category->photo->getUrl() }}" target="_blank">
@@ -46,7 +44,7 @@
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                             <form onclick="return confirm('are you sure ?');" action="{{ route('admin.categories.destroy', $category->id) }}" method="post">
-                                                @csrf 
+                                                @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>

@@ -329,7 +329,7 @@ const Checkout = () => {
                                                     {cart.name} ({cart.quantity}{" "}
                                                     x {cart.price})
                                                     <span>
-                                                        $
+                                                        Rp.
                                                         {cart.price *
                                                             cart.quantity}
                                                     </span>
